@@ -3,6 +3,8 @@ from typing import Annotated, Union
 from fastapi import FastAPI, Form
 from fastapi.responses import HTMLResponse
 
+from counter.counter import count_words
+
 app = FastAPI()
 
 
@@ -28,4 +30,4 @@ def home():
 
 @app.post("/submit")
 def count(message: Annotated[str, Form()]):
-    return {"message": message}
+    return {"number_words": count_words(message), "message": message}
