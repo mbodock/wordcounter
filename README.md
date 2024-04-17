@@ -4,7 +4,7 @@ Counts all words in an English text. Great for checking if you've met the essay 
 
 ### Running the Project
 
-The easiest way is through your container engine, such as Docker. You can either build it locally or use the public image.
+The easiest way is through your container engine, such as Docker. You can either build it locally or use the [public image](https://hub.docker.com/r/mbodock/wordcounter).
 
 To build, run the following command from within the application's root directory:
 ```bash
@@ -14,6 +14,11 @@ docker build -t wordcounter .
 Then start the application with:
 ```bash
 docker run -p 8000:8000 wordcounter
+```
+
+Alternatively, you can use the Docker Hub image from anywhere with the following command:
+```bash
+docker run -p 8000:8000 mbodock/wordcounter:rc1
 ```
 
 Finally, access http://localhost:8000/
